@@ -36,29 +36,35 @@ function division(number1, number2) {
     return division;
 }
 
-// Addition
+// Route - Addition
 app.post('/addition', function (req, res) {
     operation = addition(Number(req.body.number1), Number(req.body.number2));
     res.redirect('/');
 });
 
-// Soustraction
+// Route - Soustraction
 app.post('/soustraction', function (req, res) {
     operation = soustraction(Number(req.body.number1), Number(req.body.number2));
     res.redirect('/');
 }); 
 
-// Multiplication
+// Route - Multiplication
 app.post('/multiplication', function (req, res) {
     operation = multiplication(Number(req.body.number1), Number(req.body.number2));
     res.redirect('/');
 });
 
-// Division
+// Route - Division
 app.post('/division', function (req, res) {
     operation = division(Number(req.body.number1), Number(req.body.number2));
     res.redirect('/');
 }); 
+
+// Route - Clear
+app.post('/clear', function (req, res) {
+    operation = 0;
+    res.redirect('/');
+});
 
 // Gestion erreur 404
 app.use(function (req, res, next) {

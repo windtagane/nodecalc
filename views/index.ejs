@@ -14,6 +14,7 @@
 
         .operation {
             background-color: darkgrey;
+            margin: 0 auto;
             width: 20%;
         }
 
@@ -27,22 +28,27 @@
 </head>
 
 <body>
-    
-    <!-- Addition -->
     <div class="operation">
-        <h1>Calculatrice</h1>
         <div class="resultat">
             <p><%= resultat %></p>
         </div>
-        <form action="/addition" method="POST">
+        <form method="POST">
             <div>
                 <input type="number" name="number1">
                 <input type="number" name="number2">
             </div>
-            <input type="submit" value="+">
-            <input type="submit" formaction="/soustraction" value="-">
-            <input type="submit" formaction="/multiplication" value="x">
-            <input type="submit" formaction="/division" value="/">
+            <div>
+                <!-- Addition -->
+                <input type="submit" formaction="/addition" value="+">
+                <!-- Soustraction -->
+                <input type="submit" formaction="/soustraction" value="-">
+                <!-- Multiplication -->
+                <input type="submit" formaction="/multiplication" value="x">
+                <!-- Division -->
+                <input type="submit" formaction="/division" value="/">
+                <!-- Clear -->
+                <input type="submit" formaction="/clear" value="Clr">
+            </div>
         </form>
     </div>
 </body>
