@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>nodecalc</title>
     <style>
 
         h1 {
@@ -15,54 +15,34 @@
         .operation {
             background-color: darkgrey;
             width: 20%;
-        }    
+        }
+
+        .resultat {
+            background-color: white;
+            font-size: 50px;
+            text-align: end;
+        }
 
     </style>
 </head>
 
 <body>
+    
     <!-- Addition -->
     <div class="operation">
-        <h1>Addition</h1>
-        <form action="/add" method="POST">
+        <h1>Calculatrice</h1>
+        <div class="resultat">
+            <p><%= resultat %></p>
+        </div>
+        <form action="/addition" method="POST">
             <div>
                 <input type="number" name="number1">
                 <input type="number" name="number2">
             </div>
-            <input type="submit" value="Envoyer">
-        </form>
-    </div>
-    <!-- Soustraction -->
-    <div class="operation">
-        <h1>Soustraction</h1>
-        <form action="/substract" method="POST">
-            <div>
-                <input type="number" name="number1">
-                <input type="number" name="number2">
-            </div>
-            <input type="submit" value="Envoyer">
-        </form>
-    </div>
-    <!-- Multiplication -->
-    <div class="operation">
-        <h1>Multiplication</h1>
-        <form action="/multiply" method="POST">
-            <div>
-                <input type="number" name="number1">
-                <input type="number" name="number2">
-            </div>
-            <input type="submit" value="Envoyer">
-        </form>
-    </div>    
-    <!-- Division -->
-    <div class="operation">
-        <h1>Division</h1>
-        <form action="/division" method="POST">
-            <div>
-                <input type="number" name="number1">
-                <input type="number" name="number2">
-            </div>
-            <input type="submit" value="Envoyer">
+            <input type="submit" value="+">
+            <input type="submit" formaction="/soustraction" value="-">
+            <input type="submit" formaction="/multiplication" value="x">
+            <input type="submit" formaction="/division" value="/">
         </form>
     </div>
 </body>
