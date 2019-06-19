@@ -12,9 +12,10 @@ app.use(bodyParser());
 
 app.get('/', function (req, res) {
     res.render('index', { 
-        resultat : operation
+        resultatCalc01 : operation  
     });
 });
+
 
 function addition(number1, number2) {
     let addition = number1 + number2;
@@ -36,31 +37,33 @@ function division(number1, number2) {
     return division;
 }
 
-// Route - Addition
+
+// ROUTES
+// Addition
 app.post('/addition', function (req, res) {
     operation = addition(Number(req.body.number1), Number(req.body.number2));
     res.redirect('/');
 });
 
-// Route - Soustraction
+// Soustraction
 app.post('/soustraction', function (req, res) {
     operation = soustraction(Number(req.body.number1), Number(req.body.number2));
     res.redirect('/');
-}); 
+});
 
-// Route - Multiplication
+// Multiplication
 app.post('/multiplication', function (req, res) {
     operation = multiplication(Number(req.body.number1), Number(req.body.number2));
     res.redirect('/');
 });
 
-// Route - Division
+// Division
 app.post('/division', function (req, res) {
     operation = division(Number(req.body.number1), Number(req.body.number2));
     res.redirect('/');
 }); 
 
-// Route - Clear
+// Clear
 app.post('/clear', function (req, res) {
     operation = 0;
     res.redirect('/');
