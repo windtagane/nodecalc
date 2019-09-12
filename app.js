@@ -75,4 +75,7 @@ app.use(function (req, res, next) {
     res.status(404).send('Page introuvable !');
 });
 
-app.listen(8080);
+let port = 3000;
+app.listen(port, () => {
+    console.log('Connexion : http://localhost:' + port + '/');
+});
